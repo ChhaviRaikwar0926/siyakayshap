@@ -1,0 +1,27 @@
+from tkinter import *
+root = Tk()
+root.geometry('500x500')
+
+Label(root,text = 'length').grid(row = 0,column = 8)
+Label(root,text = 'width').grid(row = 1,column = 8)
+label3 = Label(root,text = 'area')
+label3.grid(row = 3,column = 9)
+label4 = Label(root,text = 'parameter')
+label4.grid(row = 3,column = 13)
+
+first_no = IntVar()
+second_no = IntVar()
+
+entry1 = Entry(root,textvariable = first_no).grid(row = 0,column = 9)
+entry2 = Entry(root,textvariable = second_no).grid(row = 1,column = 9)
+
+def multiply():
+    sumation = first_no.get()*second_no.get()
+    sumation1 = 2*first_no.get()*second_no.get()
+    label3.config(text ='area of rectangle is:'+ str(sumation))
+    label4.config(text = 'parameter of rectangle is:'+str(sumation1))
+
+mybutton = Button(root,text = 'calculate',command = multiply).grid(row = 6,column = 9)
+mybutton1 = Button(root,text = 'calculate!',command = multiply).grid(row = 6,column = 13)
+
+root.mainloop()
