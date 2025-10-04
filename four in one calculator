@@ -1,0 +1,47 @@
+from tkinter import*
+root = Tk()
+root.geometry('500x500')
+
+
+Label(root,text = 'enter number:').grid(row = 0,column = 0)
+Label(root,text = 'enter number:').grid(row = 1,column = 0)
+label3 = Label(root,text = 'sum')
+label3.grid(row = 3,column = 1)
+label4 = Label(root,text = 'difference')
+label4.grid(row = 4,column = 1)
+label5 = Label(root,text = 'product')
+label5.grid(row = 5,column = 1)
+label6 = Label(root,text = 'qoutient')
+label6.grid(row = 6,column = 1)
+
+frist_no = IntVar()
+second_no = IntVar()
+
+
+entry1 = Entry(root,textvariable = frist_no).grid(row = 0,column = 1)
+entry2 = Entry(root,textvariable = second_no).grid(row = 1,column = 1)
+
+def add():
+    sum  = frist_no.get()+second_no.get()
+    label3.config(text = 'addition of number is : '+str(sum))
+
+def subtract():
+    sub = (frist_no.get()-second_no.get())
+    label4.config(text = 'subtraction of number is : '+str(sub))
+
+def divide():
+    multi = frist_no.get()//second_no.get()
+    label5.config(text = 'multiplication of number is : '+str(multi))
+
+def multiply():
+    div = (frist_no.get()*second_no.get())
+    label6.config(text = 'division of number is : '+str(div))
+
+mybutton1 = Button(root,text = ('calculate'),command = add).grid(row = 3,column = 2)
+mybutton2 = Button(root,text = ('calculate'),command = subtract).grid(row = 4,column = 2)
+mybutton3 = Button(root,text = ('calculate'),command = divide).grid(row = 5,column = 2)
+mybutton4 = Button(root,text = ('calculate'),command = multiply).grid(row = 6,column = 2)
+
+root.mainloop()
+
+
